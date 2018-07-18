@@ -1,3 +1,5 @@
+//Copyright © 2018 by Oliver Nizet
+
 package intro_to_file_io;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
