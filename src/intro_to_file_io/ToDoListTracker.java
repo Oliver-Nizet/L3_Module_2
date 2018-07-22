@@ -2,6 +2,9 @@ package intro_to_file_io;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -65,6 +68,21 @@ public class ToDoListTracker implements ActionListener {
 			String i = JOptionPane.showInputDialog("Enter Number For Task To Be Removed: \n" + l);
 			int r = Integer.parseInt(i);
 			td.remove(r - 1);
+		}
+		if (e.getSource() == b3) {
+			File f = new File("src/toDo.txt");
+			try {
+				FileWriter fw = new FileWriter("src/toDo.txt");
+
+				// fw.write(td);
+
+				fw.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		if (e.getSource() == b4) {
+
 		}
 		System.out.println(td);
 	}
